@@ -1,7 +1,7 @@
 {
   "name": "quest",
   "version": "1.0.0",
-  "description": "",
+  "description": "quest project v 1.0.0",
   "main": "index.js",
   "dependencies": {
     "angular": "^1.4.7"
@@ -10,6 +10,20 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "Volodymyr Danyliv",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vdanyliv/quest.git"
+  },
+  "keywords": [
+    "quest",
+    "angularjs",
+    "js",
+    "grunt"
+  ],
+  "bugs": {
+    "url": "https://github.com/vdanyliv/quest/issues"
+  },
+  "homepage": "https://github.com/vdanyliv/quest#readme"
 }
