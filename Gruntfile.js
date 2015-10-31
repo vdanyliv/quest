@@ -2,14 +2,19 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        uglify: {
-            options: {
-                banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
-            },
-            build: {
-                src: 'src/<%= pkg.name %>.js',
-                dest: 'build/<%= pkg.name %>.min.js'
+        requirejs: {
+            compile: {
+                options: {
+                    baseUrl: 'front/app',
+                    out: 'front/app/build/app.min.js',
+                    name: 'app'
+                },
+                preserveLicenseComments : false,
+                optimize: 'uglify'
             }
+        },
+        serve: {
+            'path': 'front'
         }
     });
 
@@ -19,9 +24,14 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-requirejs');
-    
+    grunt.loadNpmTasks('grunt-serve');    
 
     /*----------  default task  ----------*/
 
-    grunt.registerTask('default', ['uglify']);
+    /*----------  tasks
+    grunt serve
+      ----------*/
+    
+
+    grunt.registerTask('default', ['requirejs', 'serve']);
 };
