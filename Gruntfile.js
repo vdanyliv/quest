@@ -13,8 +13,25 @@ module.exports = function(grunt) {
                 optimize: 'uglify'
             }
         },
-        serve: {
-            'path': 'front'
+        connect: {
+            prod: {
+                options: {
+                    port: 8000,
+                    base: 'front/',
+                    directory: 'front/',
+                    keepalive: true,
+                    debug: true
+                }
+            },
+            dev: {
+                options: {
+                    port: 8000,
+                    base: 'front/',
+                    directory: 'front/',
+                    keepalive: true,
+                    debug: true
+                }
+            }
         }
     });
 
@@ -23,15 +40,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-contrib-requirejs');
-    grunt.loadNpmTasks('grunt-serve');    
-
+    grunt.loadNpmTasks('grunt-contrib-requirejs'); 
+    grunt.loadNpmTasks('grunt-contrib-connect');
     /*----------  default task  ----------*/
 
-    /*----------  tasks
-    grunt serve
-      ----------*/
-    
-
-    grunt.registerTask('default', ['requirejs', 'serve']);
+    grunt.registerTask('prod', ['requirejs', 'connect:prod']);
+    grunt.registerTask('dev', ['connect:dev']);
 };
