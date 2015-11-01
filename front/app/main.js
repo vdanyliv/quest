@@ -8,11 +8,11 @@ require.config({
 			exports: 'angular'
 		},
 		jquery: {
-			exports: '$'
+			exports: 'jq'
 		}
-	},
+	}
+});
 
-	require(['app'], function (app) {
-		app.init();
-	});
+require(['app'], function (app) {
+	app.init();
 });
