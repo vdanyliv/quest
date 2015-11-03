@@ -21,7 +21,7 @@ module.exports = function(grunt) {
                     baseUrl: 'front/app',
                     out: 'front/app/build/app.min.js',
                     name: 'app'
-                } 
+                }
             }
         },
         connect: {
@@ -34,14 +34,27 @@ module.exports = function(grunt) {
                     debug: true
                 }
             }
+        },
+        targethtml: {
+            dev: {
+                files: {
+                    'front/index.html': 'front/htmlsrc/index.html'
+                }
+            },
+            prod: {
+                files: {
+                    'front/index.html': 'front/htmlsrc/index.html'
+                }
+            }
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-requirejs'); 
     grunt.loadNpmTasks('grunt-contrib-connect');
+    grunt.loadNpmTasks('grunt-targethtml');
     /*----------  default task  ----------*/
 
-    grunt.registerTask('prod', ['requirejs:prod', 'connect:all']);
-    grunt.registerTask('dev', ['connect:all', 'requirejs:dev']);
+    grunt.registerTask('prod', ['targethtml:prod', 'requirejs:prod', 'connect:all']);
+    grunt.registerTask('dev', ['targethtml:dev', 'connect:all', 'requirejs:dev']);
 };

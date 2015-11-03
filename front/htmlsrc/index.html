@@ -9,9 +9,11 @@
 		Test
 	</div>
 </div>
-
-
+<!--(if target dev)><!-->
+<script type="text/javascript" src="../node_modules/requirejs/require.js" data-main="/app/main.js"></script>
+<!--<!(endif)-->
+<!--(if target prod)><!-->
 <script type="text/javascript" src="app/build/app.min.js"></script>
-
+<!--<!(endif)-->
 </body>
 </html>
