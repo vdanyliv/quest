@@ -1,16 +1,16 @@
 define(
 	[
-		'angular',
-		'ngRoute'
+		'route',
+		'modules'
 	],
 
-	function(angular, ngRoute) {
-		var app = angular.module('quest', ['ngRoute']);
+	function(routeManager, moduleManager) {
+		var app = angular.module('quest', ['ngRoute', moduleManager]).config(routeManager);
 
 		app.init = function() {
-			angular.bootstrap(document, ['quest']);
+			angular.bootstrap(document.getElementsByTagName('body')[0], ['quest']);
 		}
-
+		
 		return app;
 	}
 );
