@@ -12,7 +12,8 @@ module.exports = function(grunt) {
                     baseUrl: 'front/app',
                     out: 'front/app/build/app.min.js',
                     name: 'app',
-                    optimize: 'uglify2'
+                    optimize: 'uglify2',
+                    include: ['../../node_modules/requirejs/require']
                 }
             },
             dev: {
