@@ -2,11 +2,11 @@ define(function() {
 		var RouteManager = function($routeProvider) {
  			$routeProvider
  				.when('/', {
-					templateUrl: 'index.html',
+					templateUrl: 'views/main.html',
 					controller: 'mainCtrl'
 				})
 				.otherwise('/', {
-					redirectTo: '/'
+					redirectTo: '/home'
 				});
 		}
 
