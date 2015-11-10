@@ -29,7 +29,7 @@ module.exports = function(grunt) {
             all: {
                 options: {
                     port: 9000,
-                    base: ['front/', '.'],
+                    base: ['front/', 'front/app/', '.'],
                     directory: 'front/',
                     keepalive: true,
                     debug: true
