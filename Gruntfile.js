@@ -28,7 +28,7 @@ module.exports = function(grunt) {
         connect: {
             all: {
                 options: {
-                    port: 8000,
+                    port: 9000,
                     base: ['front/', '.'],
                     directory: 'front/',
                     keepalive: true,
