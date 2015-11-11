@@ -1,14 +1,17 @@
 define(function() {
-		var RouteManager = function($routeProvider) {
+		var RouteManager = function($routeProvider, $locationProvider) {
  			$routeProvider
  				.when('/', {
 					templateUrl: 'views/main.html',
 					controller: 'mainCtrl'
 				})
-				.otherwise('/', {
-					redirectTo: '/home'
+				.when('/about', {
+					templateUrl: 'views/about.html',
+					controller: 'aboutCtrl'
 				});
+
+				$locationProvider.html5Mode(true);
 		}
 
-	return ['$routeProvider', RouteManager];
+	return ['$routeProvider', '$locationProvider', RouteManager];
 });
