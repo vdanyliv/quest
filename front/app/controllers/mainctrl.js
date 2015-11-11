@@ -1,7 +1,8 @@
 define(function () {
- 		var mainCtrl = function($scope) {
+ 		var mainCtrl = function($scope, $route, $routeParams, $location) {
  			$scope.greeting = 'Hola!';
+ 			$scope.params = $routeParams;
  		}
- 		return ['$scope', mainCtrl]
+ 		return ['$scope', '$route', '$routeParams', '$location', mainCtrl]
  	}
 );

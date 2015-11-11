@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Quest - make your own quest!</title>
+	<base href="/">
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
 	<link href="../assets/css/bootplus.css" rel="stylesheet">
 	<link href="../assets/css/main.css" rel="stylesheet">
@@ -10,13 +11,19 @@
 <div class="container-narrow">
     <div class="masthead">
 	    <ul class="nav nav-pills pull-right">
-	    	<li class="active"><a href="#">Home</a></li>
-	    	<li><a href="#">About</a></li>
-	    	<li><a href="#">Contact</a></li>
+	    	<li class="active"><a href="/">Home</a></li>
+	    	<li><a href="/about">About</a></li>
+	    	<li><a href="/">Contact</a></li>
 	    </ul>
 	    <h3 class="muted">Quest</h3>
     </div>
     <div id="main-container" ng-view></div>
+
+  <pre>$location.path() = {{$location.path()}}</pre>
+  <pre>$route.current.templateUrl = {{$route.current.templateUrl}}</pre>
+  <pre>$route.current.params = {{$route.current.params}}</pre>
+  <pre>$route.current.scope.name = {{$route.current.scope.name}}</pre>
+  <pre>$routeParams = {{$routeParams}}</pre>
 </div>
 
 <script type="text/javascript" src="../node_modules/requirejs/require.js" data-main="/app/main.js"></script>
