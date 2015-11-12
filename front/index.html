@@ -13,17 +13,11 @@
 	    <ul class="nav nav-pills pull-right">
 	    	<li class="active"><a href="/">Home</a></li>
 	    	<li><a href="/about">About</a></li>
-	    	<li><a href="/">Contact</a></li>
+	    	<li><a href="/contact">Contact</a></li>
 	    </ul>
 	    <h3 class="muted">Quest</h3>
     </div>
     <div id="main-container" ng-view></div>
-
-  <pre>$location.path() = {{$location.path()}}</pre>
-  <pre>$route.current.templateUrl = {{$route.current.templateUrl}}</pre>
-  <pre>$route.current.params = {{$route.current.params}}</pre>
-  <pre>$route.current.scope.name = {{$route.current.scope.name}}</pre>
-  <pre>$routeParams = {{$routeParams}}</pre>
 </div>
 
 <script type="text/javascript" src="../node_modules/requirejs/require.js" data-main="/app/main.js"></script>
