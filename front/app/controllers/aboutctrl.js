@@ -1,7 +1,7 @@
 define(function () {
- 		var aboutCtrl = function($scope) {
- 			$scope.greeting = 'Its about page view!';
+ 		var aboutCtrl = function($scope, $route) {
+ 			$scope.$route = $route;
  		}
- 		return ['$scope', aboutCtrl]
+ 		return ['$scope', '$route', aboutCtrl]
  	}
 );
