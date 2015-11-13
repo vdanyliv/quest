@@ -1,12 +1,17 @@
 define(function () {
- 		var contactCtrl = function($scope, $http) {
- 			$scope.greeting = 'Its about page view!';
- 			$scope.form = {};
+ 		var contactCtrl = function($scope, $http, $firebaseArray) {
+ 			var ref = new Firebase('https://glowing-heat-7159.firebaseio.com/contactForm');
+ 			
+ 			$scope.form = $firebaseArray(ref);
 
  			$scope.submitForm = function() {
- 				console.error('its test send!');
+ 				$scope.form.$add({
+ 					name: $scope.form.name,
+ 					email: $scope.form.email,
+ 					question: $scope.form.question
+ 				});
  			}
  		}
- 		return ['$scope', '$http', contactCtrl]
+ 		return ['$scope', '$http', '$firebaseArray', contactCtrl]
  	}
 );
