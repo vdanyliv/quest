@@ -1,0 +1,18 @@
+<div>
+	<h4>Sign up for free!</h4>
+	<div ng-show="error !== null || message !== null">{{error || message}}</div>
+	<form novalidate ng-submit="createNewUser()">
+		<fieldset>
+			<div class="control-group">
+				<input type="text" placeholder="Your email" ng-model="email">
+			</div>
+			<div class="control-group">
+				<input type="text" placeholder="Your password" ng-model="password">
+			</div>
+			<div class="control-group">
+				<button class="btn" type="submit">Sign Up!</button>
+			</div>
+		</fieldset>
+	</form>
+	
+</div>
