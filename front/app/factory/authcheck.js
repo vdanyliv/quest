@@ -4,7 +4,7 @@ define(
 			var fac = {};
 
 			fac.checkAuth = function() {
-			    var ref = new Firebase("https://docs-sandbox.firebaseio.com", "example3");
+			    var ref = new Firebase('https://glowing-heat-7159.firebaseio.com');
 			    return $firebaseAuth(ref);  
 			}
 
