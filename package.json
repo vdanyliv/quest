@@ -4,7 +4,8 @@
   "description": "quest project v 1.0.0",
   "main": "index.js",
   "dependencies": {
-    "angular": "^1.4.7"
+    "angular": "^1.4.7",
+    "connect-modrewrite": "~0.8.2"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
