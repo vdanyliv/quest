@@ -1,8 +1,9 @@
 define(function () {
- 		var mainCtrl = function($scope, $route, $routeParams, $location) {
- 			$scope.greeting = 'Hola!';
- 			$scope.params = $routeParams;
+ 		var mainCtrl = function($scope, checkAuthFactory) {
+ 			$scope.auth = checkAuthFactory.checkAuth();
+
+ 			console.error($scope.auth.$getAuth());
  		}
- 		return ['$scope', '$route', '$routeParams', '$location', mainCtrl]
+ 		return ['$scope', 'checkAuthFactory' , mainCtrl]
  	}
 );

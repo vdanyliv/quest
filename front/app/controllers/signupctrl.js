@@ -11,9 +11,13 @@ define(function () {
  					email: $scope.email,
  					password: $scope.password
 	 			}).then(function(userData) {
-	 				$scope.message = 'User registered successful'
+					//$scope.message = 'User registered successful'
+					auth.$authWithPassword({
+					  email: $scope.email,
+					  password: $scope.password
+					});
 	 			}).catch(function(error) {
-			        $scope.error = error;
+			        $scope.error = error.code;
 			    });
  			}
  		}
