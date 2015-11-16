@@ -1,17 +1,20 @@
 <form novalidate ng-submit="submitForm()">
 	<fieldset>
 		<h4>Feedback form.</h4>
-		<div class="control-group">
-			<input type="text" placeholder="Your name" ng-model="form.name">
-		</div>
-		<div class="control-group">
-			<input type="text" placeholder="Your email" ng-model="form.email">
-		</div>
-		<div class="control-group">
-			<textarea rows="3" ng-model="form.question">Type your question</textarea>
-		</div>
-		<div class="control-group">
-			<button class="btn" type="submit">Submit</button>
+		<div ng-show="isDataSaved">Thank you for your feedback! See you next time!</div>
+		<div ng-hide="isDataSaved">
+			<div class="control-group">
+				<input type="text" placeholder="Your name" ng-model="form.name">
+			</div>
+			<div class="control-group">
+				<input type="text" placeholder="Your email" ng-model="form.email">
+			</div>
+			<div class="control-group">
+				<textarea rows="3" ng-model="form.question">Type your question</textarea>
+			</div>
+			<div class="control-group">
+				<button class="btn" type="submit">Submit</button>
+			</div>
 		</div>
 	</fieldset>
 </form>
