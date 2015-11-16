@@ -1,4 +1,7 @@
 module.exports = function(grunt) {
+    var modRewrite = require('connect-modrewrite');
+    //var connect = require('connect');
+    //var serveStatic = require('serve-static');
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -28,6 +31,16 @@ module.exports = function(grunt) {
         connect: {
             all: {
                 options: {
+                    middleware: function(connect, options) {
+                        var middlewares = [];
+
+                        middlewares.push(modRewrite(['^[^\\.]*$ /index.html [L]'])); //Matches everything that does not contain a '.' (period)
+                        options.base.forEach(function(base) {
+                            middlewares.push(connect.static(base));
+                        });
+
+                        return middlewares;
+                    },
                     port: 9000,
                     base: ['front/', 'front/app/', '.'],
                     directory: 'front/',
