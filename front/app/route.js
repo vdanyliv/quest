@@ -12,6 +12,10 @@ define(function() {
 				.when('/contact', {
 					templateUrl: 'views/contact.html',
 					controller: 'contactCtrl'
+				})
+				.when('/signup', {
+					templateUrl: 'views/signup.html',
+					controller: 'signUpCtrl'
 				});
 
 				$locationProvider.html5Mode(true);
