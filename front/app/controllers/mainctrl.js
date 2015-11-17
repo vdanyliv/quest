@@ -1,10 +1,15 @@
 define(function () {
  		var mainCtrl = function($scope, checkAuthFactory) {
- 			$scope.auth = checkAuthFactory.authRequire();
- 			$scope.status = $scope.auth;
+ 			$scope.auth = checkAuthFactory.checkAuth().$getAuth();
 
- 			console.error($scope.status)
- 			
+ 			if ($scope.auth) {
+ 				$scope.name = $scope.auth.name === undefined ? $scope.auth.password.email : null;
+ 				$scope.greeting = 'Play';
+ 			}
+ 			else {
+ 				$scope.signup = 'Please sign up';
+ 				$scope.signin = 'SignIn'
+ 			}
  		}
  		return ['$scope', 'checkAuthFactory' , mainCtrl]
  	}

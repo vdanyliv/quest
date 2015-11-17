@@ -4,7 +4,12 @@
 	<p class="lead">
 		Easy way to create your own quest!
 	</p>
-	<a class="btn btn-large btn-success" href="/signup">{{ greeting }} Sign up today</a>
+	<a class="btn btn-large btn-success" ng-show="auth">{{ greeting }}</a>
+	<div ng-hide="auth">
+		<span><a class="btn-large btn-success custom-link" href="/signup">{{ signup }}</a></span> 
+		<spam style="padding:0 5px 0 5px;"><b>or</b></spam> 
+		<span><a class="btn-large btn-info custom-link" href="/signin">{{ signin }}</a></span>
+	</div>	
 </div>
 <hr>
 <div class="row-fluid marketing">

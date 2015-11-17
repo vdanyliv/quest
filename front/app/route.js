@@ -7,7 +7,12 @@ define(function() {
 				})
 				.when('/about', {
 					templateUrl: 'views/about.html',
-					controller: 'aboutCtrl'
+					controller: 'aboutCtrl',
+					resolve: {
+						"currentAuth": ["checkAuthFactory", function(checkAuthFactory) {
+							return checkAuthFactory.checkAuth().$waitForAuth();
+						}]
+					}
 				})
 				.when('/contact', {
 					templateUrl: 'views/contact.html',
@@ -15,7 +20,18 @@ define(function() {
 				})
 				.when('/signup', {
 					templateUrl: 'views/signup.html',
-					controller: 'signUpCtrl'
+					controller: 'signUpCtrl',
+					resolve: {
+						"currentAuth": ["checkAuthFactory", function(checkAuthFactory) {
+							var promise = checkAuthFactory.checkAuth().$waitForAuth();
+
+							promise.then(function(authStatus) {
+								if (authStatus !== null) {
+									window.location.href = '/';
+								}
+							});
+						}]
+					}
 				});
 
 				$locationProvider.html5Mode(true);
