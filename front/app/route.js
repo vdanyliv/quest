@@ -4,11 +4,6 @@ define(function() {
  				.when('/', {
 					templateUrl: 'views/main.html',
 					controller: 'mainCtrl'
-					resolve: {
-						'currentAuth': ['checkAuthFactory', function(auth) {
-							return auth.authRequire();
-						}]
-					}
 				})
 				.when('/about', {
 					templateUrl: 'views/about.html',
