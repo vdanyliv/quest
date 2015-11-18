@@ -23,13 +23,16 @@ define(function() {
 					controller: 'signUpCtrl',
 					resolve: {
 						"currentAuth": ["checkAuthFactory", function(checkAuthFactory) {
-							var promise = checkAuthFactory.checkAuth().$waitForAuth();
-
-							promise.then(function(authStatus) {
-								if (authStatus !== null) {
-									window.location.href = '/';
-								}
-							});
+							return checkAuthFactory.blockAccessForRegitered();
+						}]
+					}
+				})
+				.when('/signin', {
+					templateUrl: 'views/signin.html',
+					controller: 'signInCtrl',
+					resolve: {
+						"currentAuth": ["checkAuthFactory", function(checkAuthFactory) {
+							return checkAuthFactory.blockAccessForRegitered();
 						}]
 					}
 				});
