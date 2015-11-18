@@ -4,9 +4,10 @@ define(
 		'controllers/aboutctrl',
 		'controllers/contactctrl',
 		'controllers/signupctrl',
-		'controllers/navigationctrl'
+		'controllers/navigationctrl',
+		'controllers/signinctrl'
 	],
-	function(mainCtrl, aboutCtrl, contactCtrl, signUpCtrl, navigationCtrl) {
+	function(mainCtrl, aboutCtrl, contactCtrl, signUpCtrl, navigationCtrl, signInCtrl) {
 		var moduleName = 'quest.main';
 		
 		angular.module(moduleName, [])
@@ -14,7 +15,8 @@ define(
 			.controller('aboutCtrl', aboutCtrl)
 			.controller('contactCtrl', contactCtrl)
 			.controller('signUpCtrl', signUpCtrl)
-			.controller('navigationCtrl', navigationCtrl);
+			.controller('navigationCtrl', navigationCtrl)
+			.controller('signInCtrl', signInCtrl);
 
 	return moduleName;
 });
