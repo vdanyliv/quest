@@ -14,6 +14,17 @@ define(
 				return authObject.$requireAuth();
 			}
 
+			fac.blockAccessForRegitered = function() {
+				var authObject = $firebaseAuth(ref),
+					authPromise = authObject.$waitForAuth();
+
+				return authPromise.then(function(authStatus) {
+					if (authStatus !== null) {
+						window.location.href = '/';
+					}
+				});
+			}
+
 			return fac;
 		}
 
