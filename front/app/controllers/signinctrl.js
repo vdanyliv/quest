@@ -18,12 +18,7 @@ define(function () {
 						window.clearTimeout(runRedirectTimer);
 					}, 2000);
 				}).catch(function(error) {
-					if (error.code === 'INVALID_EMAIL') {
-						$scope.error = 'The specified email is not a valid email.';
-					}
-					else if (error.code === 'INVALID_PASSWORD') {
-						$scope.error = 'The specified user account password is incorrect.';
-					}
+					$scope.error = error.message;
 				});	
  			};
  		}
