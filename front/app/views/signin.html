@@ -1,0 +1,18 @@
+<div>
+	<h4>SignIn in your account!</h4>
+	<div ng-show="error"><h5>{{ error }}</h5></div>
+	<form novalidate ng-hide="authSuccess" ng-submit="signIn()">
+		<fieldset>
+			<div class="control-group">
+				<input type="text" placeholder="Your email" ng-model="email">
+			</div>
+			<div class="control-group">
+				<input type="password" placeholder="Your password" ng-model="password">
+			</div>
+			<div class="control-group">
+				<button class="btn" type="submit">Sign In!</button>
+			</div>
+		</fieldset>
+	</form>
+	<div ng-show="authSuccess"><h5>Success! Redirecting to main page</h5></div>
+</div>
