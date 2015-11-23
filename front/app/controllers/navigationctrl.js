@@ -1,5 +1,6 @@
 define(function () {
- 		var navigationCtrl = function($scope, $location) {
+ 		var navigationCtrl = function($scope, $location, checkAuthFactory) {
+ 			$scope.auth = checkAuthFactory.checkAuth().$getAuth();
  			$scope.$on('$routeChangeStart', function(next, current) { 
  				$scope.route = $location.url();
 			});
@@ -11,6 +12,6 @@ define(function () {
 			}
  		}
 
- 		return ['$scope', '$location', navigationCtrl];
+ 		return ['$scope', '$location', 'checkAuthFactory', navigationCtrl];
  	}
 );

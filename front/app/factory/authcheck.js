@@ -25,6 +25,25 @@ define(
 				});
 			}
 
+			fac.isUserAuth = function() {
+				var authObject = $firebaseAuth(ref),
+					authPromise = authObject.$waitForAuth();
+
+				return authPromise.then(function(authStatus) {
+					if (authStatus === null) {
+						window.location.href = '/';
+					}
+				});	
+			}
+
+			fac.userInfo = function() {
+				var authObject = $firebaseAuth(ref),
+					userObject = authObject.$getAuth();
+
+				return userObject;
+
+			}
+
 			return fac;
 		}
 

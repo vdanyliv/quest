@@ -11,12 +11,18 @@
 <body>
 <div class="container-narrow">
     <div class="masthead" ng-controller="navigationCtrl">
-	    <ul class="nav nav-pills pull-right">
+	    <ul ng-hide="auth" class="nav nav-pills pull-right">
 	    	<li ng-class="getClass('/')"><a href="/">Home</a></li>
 	    	<li ng-class="getClass('/about')"><a href="/about">About</a></li>
 	    	<li ng-class="getClass('/contact')"><a href="/contact">Contact</a></li>
 	    </ul>
-	    <h3 class="muted">Quest</h3>
+	   	<ul ng-show="auth" class="nav nav-pills pull-right">
+	    	<li ng-class="getClass('/create-quest')"><a href="/create-quest">Create new quest</a></li>
+	    	<li ng-class="getClass('/quest-list')"><a href="/quest-list">Quest List</a></li>
+	    	<li ng-class="getClass('/my-quest')"><a href="/my-quest">My quest</a></li>
+	    	<li ng-class="getClass('/profile')"><a href="/profile">My profile</a></li>
+	    </ul>
+	    <h3 class="muted"><a class="logo-link" href="/">Quest</a></h3>
     </div>
     <div id="main-container" ng-view></div>
 </div>

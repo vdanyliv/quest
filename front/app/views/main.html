@@ -1,10 +1,10 @@
 <hr>
-<div class="jumbotron">
+<div class="jumbotron backImg">
 	<h1>Quest</h1>
 	<p class="lead">
 		Easy way to create your own quest!
 	</p>
-	<a class="btn btn-large btn-success" ng-show="auth">{{ greeting }}</a>
+	<a class="btn btn-large btn-success" ng-show="auth" href="/quest-list">{{ greeting }}</a>
 	<div ng-hide="auth">
 		<span><a class="btn-large btn-success custom-link" href="/signup">{{ signup }}</a></span> 
 		<spam style="padding:0 5px 0 5px;"><b>or</b></spam> 

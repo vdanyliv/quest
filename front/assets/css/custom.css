@@ -1,3 +1,52 @@
 .custom-link:hover {
 	text-decoration: none;
 }
+.backImg {
+	/*background-color: #000;*/
+	background: url('http://blog.getyourguide.com/wp-content/uploads/2014/08/o-TRAVELING-ALONE-facebook.jpg');
+	background-position:center center;
+	padding: 60px 0;
+	margin: 0;
+	color:#fff;
+}
+.logo-link:hover, .logo-link:focus  {
+	text-decoration: none;
+}
+.alert_padding {
+	margin: 15px 0 0 0;
+}
+#map { 
+	display: block;
+	height: 400px; 
+}
+.pointList {
+	padding: 5px 0 5px 0;
+}
+.submit-quest {
+	padding: 20px 0 5px 0;
+}
+.custom-h6 {
+	padding: 0;
+	margin: 0;
+}
+.custom-h4 {
+	float:left;
+}
+.recomended-for-you {
+	float:right;
+	padding: 8px 0 0 0;
+}
+.header-bar {
+	display: block;
+	overflow: auto;
+}
+.custom-li {
+	margin: 0;
+}
+.custom-li li {
+	list-style: none;
+	line-height: 25px;
+}
+.special-btn {
+	width: 50%;
+}

@@ -1,0 +1,29 @@
+<div>
+	<h3>Coffee-In</h3>
+	<div class="row-fluid">
+		<div class="span5">
+			<div class="img">
+				<img class="img-rounded" src="../content/quest/page_1.jpg">
+			</div>
+		</div>
+		<div class="span7">
+			<div style="margin: 10px 0 0 0;">
+				<ul class="custom-li">
+					<li><b>Reward: </b>Yes</li>
+					<li><b>Reward description: </b>20% promo for first coffee</li>
+					<li><b>Number of participant: </b>5</li>
+					<li><b>Quest difficulty: </b>2</li>
+					<li><b>Number of points: </b> 2</li>
+					<li><b>Description:</b> Find Coffee-in and get 20% promo for first order. This offer will be avaible only for 5 participants!</li>
+				</ul>
+			</div>
+			<div style="text-align:center; margin: 10px 0 0 0;">
+				<button ng-hide="isQuestStart" ng-click="startQuest()" class="btn btn-large btn-block btn-primary special-btn" type="button">Start Quest</button>
+				<button ng-show="isQuestStart" ng-click="stopQuest()" class="btn btn-large btn-block btn-warning special-btn" type="button">Finish Quest</button>
+			</div>
+		</div>
+		<div class="span12" style="margin:20px 0 0 0;">
+			<div id="map" ng-show="isQuestStart"></div>
+		</div>
+	</div>
+</div>

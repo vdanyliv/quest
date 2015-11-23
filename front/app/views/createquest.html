@@ -1,0 +1,72 @@
+<h3>New Quest</h3>
+<form class="form-horizontal">
+	<div class="control-group">
+		<label>Quest name</label>
+		<input type="text" name="quest_name" placeholder="Type quest name">
+	</div>
+	<div class="control-group">
+		<label>Quest description</label>
+		<textarea class="input-xxlarge" rows="5"></textarea>
+	</div>
+	<div class="control-group">
+		<label>Upload quest image</label>
+		<input type="file" name="somename" size="chars"> 
+	</div>
+	<div class="control-group">
+		<label>Quest type</label>
+		<select>
+			<option>Commerce</option>
+			<option>Non-Commerce</option>
+		</select>
+		<div class="alert alert_padding">
+			<strong>Warning!</strong> choose correct type of your quest.
+		</div>
+	</div>
+	<div class="control-group">
+		<label>Number of participant</label>
+		<input type="text" name="participant" class="input-mini">
+		<div class="alert alert_padding">
+			<strong>Warning!</strong> Please type number of participant in your Quest.
+		</div>
+	</div>
+	<div class="control-group">
+		<label>Quest start (date/time)</label>
+		<input type="text" name="quest_start" class="input-small">
+	</div>
+	<div class="control-group">
+		<label>Choose difficulty</label>
+		<select class="input-mini">
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+			<option>6</option>
+			<option>7</option>
+			<option>8</option>
+			<option>9</option>
+			<option>10</option>
+		</select>
+		<div class="alert alert_padding">
+			<strong>Warning!</strong> Choose quest difficulty by selecting correct number (from 0 to 10).
+		</div>
+	</div>
+	<div class="control-group">
+		<label>Reward description:</label>
+		<textarea class="input-xxlarge" rows="5"></textarea>
+	</div>
+	<div class="map">
+		<div class="alert alert-success"><b>Almost Done!</b> Please set quest point on the map and write task on each one.</div>
+		<div id="map"></div>
+	</div>
+	<div class="pointList" data-ng-repeat="i in pointObject">
+		<div class="control-group">
+			<h4>Point: {{i.label}}</h4>
+			<h5>{{i.title}}</h5>
+			<input type="text" placeholder="Type task for point: {{i.label}}">
+		</div>
+	</div>
+	<div class="submit-quest">
+		<input type="submit" class="btn btn-success" value="Submit Quest!">
+	</div>
+</form>
